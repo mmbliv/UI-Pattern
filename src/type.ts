@@ -1,6 +1,7 @@
 export type DogCardType = {
   name: string;
   url: string;
+  id: string;
 };
 
 export interface DogDetailType extends DogCardType {
