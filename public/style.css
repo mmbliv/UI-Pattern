@@ -1,0 +1,36 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.cards {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 250px);
+  padding: 4rem;
+  gap: 1rem;
+}
+.dog-card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.dog-card {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s linear;
+}
+.dog-card:hover {
+  transform: scale(1.1);
+}
+.dog-card__img-container {
+  height: 100%;
+  width: 100%;
+}
+.dog-card__dog-name {
+  text-align: center;
+}
