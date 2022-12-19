@@ -43,13 +43,13 @@ export const buildDetailsCard = function (dog) {
     <img src=${dog.url} alt="dog" class="card-details_img" />
   </div>
   <div class="card-details__content">
-    <h2 class="card-details__name">${dog.name}</h2>
-    <p class="card-details__bred-for">${dog.bred_for}</p>
-    <p class="card-details__breed-group">${dog.breed_group}</p>
-    <p class="card-details__temperament">${dog.temperament}</p>
-    <p class="card-details__height">${dog.height}</p>
-    <p class="card-details__weight">${dog.weight}</p>
-    <p class="card-details__life-span">${dog.life_span}</p>
+    <h2 class="card-details__name">Name: ${dog.name}</h2>
+    <p class="card-details__bred-for">Breeding Purpose: ${dog.bred_for}</p>
+    <p class="card-details__breed-group">Breeding Group: ${dog.breed_group}</p>
+    <p class="card-details__temperament">Temperament: ${dog.temperament}</p>
+    <p class="card-details__height">Height: ${(dog.height.imperial, dog.height.metric)}</p>
+    <p class="card-details__weight">Weight: ${(dog.weight.imperial, dog.weight.metric)}</p>
+    <p class="card-details__life-span">Life Span: ${dog.life_span}</p>
   </div>
 `;
     return html;
