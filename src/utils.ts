@@ -1,6 +1,10 @@
 import { DogCardType } from "./type.js";
 import { DogDetailType } from "./type.js";
-export const fetchApi = async function (url: string): Promise<[]> {
+const main = document.querySelector("main")!;
+const load = document.querySelector(".loading")! as HTMLDivElement;
+export const fetchApi = async function (url: string) {
+  load.style.display = "flex";
+  main.innerHTML = "";
   try {
     const res = await fetch(url, {
       method: "GET",
@@ -12,7 +16,24 @@ export const fetchApi = async function (url: string): Promise<[]> {
       },
     });
     const data = await res.json();
-    return data;
+    const dogData: DogDetailType[] = [];
+    load.style.display = "none";
+    data.forEach((dog: any) => {
+      const dogD: DogDetailType = {
+        name: dog.breeds[0].name,
+        url: dog.url,
+        id: dog.id,
+        weight: dog.breeds[0].weight,
+        height: dog.breeds[0].height,
+        bred_for: dog.breeds[0].bred_for,
+        breed_group: dog.breeds[0].breed_group,
+        life_span: dog.breeds[0].life_span,
+        temperament: dog.breeds[0].temperament,
+      };
+      dogData.push(dogD);
+      main.innerHTML += bulidCard(dogD);
+    });
+    return dogData;
   } catch (e) {
     throw e;
   }

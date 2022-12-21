@@ -7,8 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const main = document.querySelector("main");
+const load = document.querySelector(".loading");
 export const fetchApi = function (url) {
     return __awaiter(this, void 0, void 0, function* () {
+        load.style.display = "flex";
+        main.innerHTML = "";
         try {
             const res = yield fetch(url, {
                 method: "GET",
@@ -19,7 +23,24 @@ export const fetchApi = function (url) {
                 },
             });
             const data = yield res.json();
-            return data;
+            const dogData = [];
+            load.style.display = "none";
+            data.forEach((dog) => {
+                const dogD = {
+                    name: dog.breeds[0].name,
+                    url: dog.url,
+                    id: dog.id,
+                    weight: dog.breeds[0].weight,
+                    height: dog.breeds[0].height,
+                    bred_for: dog.breeds[0].bred_for,
+                    breed_group: dog.breeds[0].breed_group,
+                    life_span: dog.breeds[0].life_span,
+                    temperament: dog.breeds[0].temperament,
+                };
+                dogData.push(dogD);
+                main.innerHTML += bulidCard(dogD);
+            });
+            return dogData;
         }
         catch (e) {
             throw e;
