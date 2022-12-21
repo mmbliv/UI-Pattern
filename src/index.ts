@@ -54,3 +54,8 @@ document.addEventListener("scroll", function (e) {
     cardDetail.style.display = "none";
   }
 });
+// more button
+const moreBtn = document.querySelector(".btn-close")! as HTMLButtonElement;
+moreBtn.addEventListener("click", function () {
+  window.location.reload();
+});
