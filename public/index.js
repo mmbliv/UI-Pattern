@@ -5,7 +5,7 @@ const cardDetail = document.querySelector(".card-details__container");
 let dogData = [];
 const url = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
 // fetch data
-fetchApi(url);
+fetchApi(url).then((data) => (dogData = data));
 //
 // add click event to each card
 const dogCard = document.querySelector(".cards");
@@ -34,7 +34,7 @@ document.addEventListener("scroll", function (e) {
     }
 });
 // more button
-const moreBtn = document.querySelector(".btn-close");
+const moreBtn = document.querySelector(".btn-more");
 moreBtn.addEventListener("click", function () {
     fetchApi(url);
 });

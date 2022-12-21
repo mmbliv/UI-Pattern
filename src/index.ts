@@ -11,7 +11,7 @@ let dogData: DogDetailType[] = [];
 const url =
   "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
 // fetch data
-fetchApi(url);
+fetchApi(url).then((data) => (dogData = data));
 //
 // add click event to each card
 const dogCard = document.querySelector(".cards")! as HTMLDivElement;
@@ -40,7 +40,7 @@ document.addEventListener("scroll", function (e) {
   }
 });
 // more button
-const moreBtn = document.querySelector(".btn-close")! as HTMLButtonElement;
+const moreBtn = document.querySelector(".btn-more")! as HTMLButtonElement;
 moreBtn.addEventListener("click", function () {
   fetchApi(url);
 });

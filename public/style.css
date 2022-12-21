@@ -6,7 +6,10 @@
   box-sizing: border-box;
 }
 body {
-  height: 100vh;
+  position: relative;
+}
+.main-container {
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +21,7 @@ body {
   align-items: center;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   padding-left: 5rem;
   padding-right: 5rem;
   /* z-index: 0; */
@@ -49,17 +52,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 5rem;
+  height: 100%;
+  width: 100vw;
   /* top: 2rem; */
 }
 .layer {
   background-color: rgba(219, 229, 229, 0.857);
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 }
 .card-details {
   display: flex;
   width: 70%;
   height: 60%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   /* border-radius: 15px; */
 }
 .card-details_img {
@@ -94,36 +104,34 @@ body {
   border-radius: 10px;
 }
 
-.btn-close {
-  background-color: #c2fbd7;
-  border-radius: 100px;
-  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
-    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
-    rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color: green;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+.btn-more {
+  background-image: url(./foot.png);
+  height: 4rem;
+  width: 4rem;
+  background-position: center;
+  background-size: 4rem 4rem;
+  border: none;
+  border-radius: 50%;
+  /* position: fixed; */
 }
-
-.btn-close:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
-    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
-    rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+.banner {
+  height: 5rem;
+  width: 100%;
+  background-image: url(./banner.jpg);
+  /* background-repeat: repeat; */
+  background-size: cover;
+  background-position: bottom;
 }
-/* loading */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+.btn-more:hover {
+  transform: scale(1.1) rotate(-4deg);
+}
 .loading {
   width: 100%;
   height: 100%;
@@ -132,10 +140,18 @@ body {
   align-items: center;
   position: absolute;
   background-color: white;
+  top: 0;
 }
 @media (max-width: 900px) {
+  .main-container {
+    height: auto;
+    padding-top: 2rem;
+  }
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .card-details {
+    height: 60vh;
   }
 }
 @media (max-width: 600px) {
