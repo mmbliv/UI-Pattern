@@ -9,12 +9,13 @@
 body {
   position: relative;
   font-family: "Kanit", sans-serif;
-  color: rgb(140, 110, 140);
+  color: rgba(0, 0, 0, 0.67);
 }
 .title {
   font-size: larger;
   font-weight: bolder;
   padding-right: 0.6rem;
+  color: rgb(41, 98, 98);
 }
 .main-container {
   height: 80vh;
@@ -149,7 +150,16 @@ body {
   position: absolute;
   background-color: white;
   top: 0;
+  background-image: url(./loading.gif);
+  background-position: center;
+  background-size: cover;
 }
+
+.loading-text {
+  position: relative;
+  top: 30%;
+}
+
 @media (max-width: 900px) {
   .main-container {
     height: auto;
@@ -161,6 +171,12 @@ body {
   .card-details {
     height: 60vh;
   }
+  .loading {
+    background-image: none;
+  }
+  .loading-text {
+    position: static;
+  }
 }
 @media (max-width: 600px) {
   .cards {
@@ -168,5 +184,16 @@ body {
   }
   .card-details {
     width: 95%;
+    height: 40%;
+  }
+  .card-details__content {
+    gap: 5px;
+    font-size: small;
+    padding: 1rem;
+  }
+  .close {
+    padding: 2px;
+    font-size: small;
+    border-radius: 5px;
   }
 }
