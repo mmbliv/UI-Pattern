@@ -11,7 +11,7 @@ import { fetchApi } from "./utils.js";
 import { bulidCard } from "./utils.js";
 import { buildDetailsCard } from "./utils.js";
 const main = document.querySelector("main");
-const cardDetail = document.querySelector(".card-details");
+const cardDetail = document.querySelector(".card-details__container");
 const dogData = [];
 const url = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
 (function generateClikEvent() {
@@ -33,13 +33,16 @@ const url = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&
                 main.innerHTML += bulidCard(dogD);
             });
         });
-        const dogCards = document.querySelectorAll(".dog-card");
-        dogCards.forEach((dog) => {
-            dog.addEventListener("click", function (e) {
-                const id = dog.getAttribute("data-id");
+        const dogCard = document.querySelector(".cards");
+        dogCard.addEventListener("click", function (e) {
+            const target = e.target;
+            console.log(0);
+            const dogCard = target.closest(".dog-card");
+            if (dogCard) {
+                const id = dogCard.getAttribute("data-id");
                 const dogWithDetail = dogData.filter((data) => data.id === id);
                 cardDetail.innerHTML = buildDetailsCard(dogWithDetail[0]);
-            });
+            }
         });
     });
 })();

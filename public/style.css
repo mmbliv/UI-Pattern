@@ -5,17 +5,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .cards {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 250px);
+  grid-template-rows: repeat(3, 33%);
   padding: 4rem;
   gap: 1rem;
+  z-index: 0;
 }
 .dog-card__img {
   width: 100%;
-  height: 200px;
+  height: 130px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -34,3 +36,34 @@
 .dog-card__dog-name {
   text-align: center;
 }
+.card-details__container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.layer {
+  background-color: rgba(219, 229, 229, 0.857);
+}
+.card-details {
+  display: flex;
+  width: 70%;
+  height: 60%;
+}
+.card-details_img {
+  width: 100%;
+  object-fit: cover;
+}
+.card-details_img__container {
+  width: 50%;
+}
+/* .layer {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  mix-blend-mode: screen;
+  z-index: 50;
+} */

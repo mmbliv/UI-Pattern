@@ -39,6 +39,7 @@ export const bulidCard = function (dog) {
 };
 export const buildDetailsCard = function (dog) {
     const html = `
+  <div class="card-details">
   <div class="card-details_img__container">
     <img src=${dog.url} alt="dog" class="card-details_img" />
   </div>
@@ -50,6 +51,8 @@ export const buildDetailsCard = function (dog) {
     <p class="card-details__height">Height: ${(dog.height.imperial, dog.height.metric)}</p>
     <p class="card-details__weight">Weight: ${(dog.weight.imperial, dog.weight.metric)}</p>
     <p class="card-details__life-span">Life Span: ${dog.life_span}</p>
+    <button class="close">X</button>
+  </div>
   </div>
 `;
     return html;
