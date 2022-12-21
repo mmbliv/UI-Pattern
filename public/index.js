@@ -13,6 +13,7 @@ import { buildDetailsCard } from "./utils.js";
 const main = document.querySelector("main");
 const cardDetail = document.querySelector(".card-details__container");
 const dogData = [];
+let close;
 const url = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
 (function generateClikEvent() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -36,12 +37,19 @@ const url = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&
         const dogCard = document.querySelector(".cards");
         dogCard.addEventListener("click", function (e) {
             const target = e.target;
-            console.log(0);
             const dogCard = target.closest(".dog-card");
+            cardDetail.classList.add("layer");
+            cardDetail.style.display = "flex";
             if (dogCard) {
                 const id = dogCard.getAttribute("data-id");
                 const dogWithDetail = dogData.filter((data) => data.id === id);
                 cardDetail.innerHTML = buildDetailsCard(dogWithDetail[0]);
+            }
+        });
+        cardDetail.addEventListener("click", function (e) {
+            const target = e.target;
+            if (target.className === "close") {
+                cardDetail.style.display = "none";
             }
         });
     });

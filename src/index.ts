@@ -32,12 +32,19 @@ const url =
   const dogCard = document.querySelector(".cards")! as HTMLDivElement;
   dogCard.addEventListener("click", function (e) {
     const target = e.target as Element;
-    console.log(0);
     const dogCard = target.closest(".dog-card");
+    cardDetail.classList.add("layer");
+    cardDetail.style.display = "flex";
     if (dogCard) {
       const id = dogCard.getAttribute("data-id");
       const dogWithDetail = dogData.filter((data) => data.id === id);
       cardDetail.innerHTML = buildDetailsCard(dogWithDetail[0]);
+    }
+  });
+  cardDetail.addEventListener("click", function (e) {
+    const target = e.target as Element;
+    if (target.className === "close") {
+      cardDetail.style.display = "none";
     }
   });
 })();
