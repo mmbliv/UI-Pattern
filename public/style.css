@@ -49,7 +49,7 @@ body {
 }
 .card-details__container {
   position: absolute;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   top: 5rem;
