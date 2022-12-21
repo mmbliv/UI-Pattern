@@ -9,7 +9,7 @@ const cardDetail = document.querySelector(
 )! as HTMLDivElement;
 const dogData: DogDetailType[] = [];
 const url =
-  "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=20";
+  "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
 // fetch data
 fetchApi(url).then((data) => {
   data.forEach((dog: any) => {
@@ -45,6 +45,12 @@ dogCard.addEventListener("click", function (e) {
 cardDetail.addEventListener("click", function (e) {
   const target = e.target as Element;
   if (target.className === "close") {
+    cardDetail.style.display = "none";
+  }
+});
+// scoll event
+document.addEventListener("scroll", function (e) {
+  if (window.innerWidth <= 900) {
     cardDetail.style.display = "none";
   }
 });

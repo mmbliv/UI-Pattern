@@ -18,9 +18,7 @@ export const fetchApi = function (url) {
                     "Content-Type": "application/json",
                 },
             });
-            console.log(res);
             const data = yield res.json();
-            console.log(data);
             return data;
         }
         catch (e) {
