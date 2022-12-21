@@ -8,9 +8,16 @@ const cardDetail = document.querySelector(
   ".card-details__container"
 )! as HTMLDivElement;
 let dogData: DogDetailType[] = [];
-const url =
-  "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
+let url: string;
 // fetch data
+if (window.innerWidth >= 1200) {
+  url =
+    "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
+} else {
+  url =
+    "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=10";
+}
+
 fetchApi(url).then((data) => (dogData = data));
 //
 // add click event to each card
@@ -42,5 +49,12 @@ document.addEventListener("scroll", function (e) {
 // more button
 const moreBtn = document.querySelector(".btn-more")! as HTMLButtonElement;
 moreBtn.addEventListener("click", function () {
+  if (window.innerWidth >= 1200) {
+    url =
+      "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
+  } else {
+    url =
+      "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=10";
+  }
   fetchApi(url).then((data) => (dogData = data));
 });
