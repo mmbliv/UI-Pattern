@@ -4,7 +4,8 @@ import { buildDetailsCard } from "./utils.js";
 const main = document.querySelector("main");
 const cardDetail = document.querySelector(".card-details__container");
 const dogData = [];
-const url = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
+const url = "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=20";
+// fetch data
 fetchApi(url).then((data) => {
     data.forEach((dog) => {
         const dogD = {
@@ -22,6 +23,7 @@ fetchApi(url).then((data) => {
         main.innerHTML += bulidCard(dogD);
     });
 });
+// add click event to each card
 const dogCard = document.querySelector(".cards");
 dogCard.addEventListener("click", function (e) {
     const target = e.target;
@@ -34,6 +36,7 @@ dogCard.addEventListener("click", function (e) {
         cardDetail.innerHTML = buildDetailsCard(dogWithDetail[0]);
     }
 });
+// add click event to close btn
 cardDetail.addEventListener("click", function (e) {
     const target = e.target;
     if (target.className === "close") {
