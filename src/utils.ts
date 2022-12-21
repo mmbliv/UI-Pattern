@@ -56,27 +56,13 @@ export const buildDetailsCard = function (dog: DogDetailType) {
     <img src=${dog.url} alt="dog" class="card-details_img" />
   </div>
   <div class="card-details__content">
-    <p class="card-details__name"><span class='title'>Name:</span> ${
-      dog.name
-    }</p>
-    <p class="card-details__bred-for"><span class='title'>Breeding Purpose:</span> ${
-      dog.bred_for
-    }</p>
-    <p class="card-details__breed-group"><span class='title'>Breeding Group:</span> ${
-      dog.breed_group
-    }</p>
-    <p class="card-details__temperament"><span class='title'>Temperament:</span> ${
-      dog.temperament
-    }</p>
-    <p class="card-details__height"><span class='title'>Height:</span> ${
-      (dog.height.imperial, dog.height.metric)
-    }</p>
-    <p class="card-details__weight"><span class='title'>Weight:</span> ${
-      (dog.weight.imperial, dog.weight.metric)
-    }</p>
-    <p class="card-details__life-span"><span class='title'>Life Span:</span> ${
-      dog.life_span
-    }</p>
+    <p class="card-details__name"><span class='title'>Name:</span> ${dog.name}</p>
+    <p class="card-details__bred-for"><span class='title'>Breeding Purpose:</span> ${dog.bred_for}</p>
+    <p class="card-details__breed-group"><span class='title'>Breeding Group:</span> ${dog.breed_group}</p>
+    <p class="card-details__temperament"><span class='title'>Temperament:</span> ${dog.temperament}</p>
+    <p class="card-details__height"><span class='title'>Height:</span> Imperial: ${dog.height.imperial}; Metric: ${dog.height.metric}</p>
+    <p class="card-details__weight"><span class='title'>Weight:</span>Imperia: ${dog.weight.imperial}; Metric: ${dog.weight.metric}</p>
+    <p class="card-details__life-span"><span class='title'>Life Span:</span> ${dog.life_span}</p>
     <button class="close">X</button>
   </div>
   </div>
