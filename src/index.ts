@@ -22,7 +22,6 @@ dogCard.addEventListener("click", function (e) {
   cardDetail.style.display = "flex";
   if (dogCard) {
     const id = dogCard.getAttribute("data-id");
-    console.log(id);
     const dogWithDetail = dogData.filter((data) => data.id === id);
     cardDetail.innerHTML = buildDetailsCard(dogWithDetail[0]);
   }
@@ -43,5 +42,5 @@ document.addEventListener("scroll", function (e) {
 // more button
 const moreBtn = document.querySelector(".btn-more")! as HTMLButtonElement;
 moreBtn.addEventListener("click", function () {
-  fetchApi(url);
+  fetchApi(url).then((data) => (dogData = data));
 });
