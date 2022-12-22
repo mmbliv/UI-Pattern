@@ -170,7 +170,7 @@ body {
   position: relative;
   top: 30%;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .cards {
     grid-template-rows: repeat(2, 1fr);
   }

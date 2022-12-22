@@ -10,7 +10,7 @@ const cardDetail = document.querySelector(
 let dogData: DogDetailType[] = [];
 let url: string;
 // fetch data
-if (window.innerWidth >= 1200) {
+if (screen.width > 1300) {
   url =
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
 } else {
@@ -49,7 +49,8 @@ document.addEventListener("scroll", function (e) {
 // more button
 const moreBtn = document.querySelector(".btn-more")! as HTMLButtonElement;
 moreBtn.addEventListener("click", function () {
-  if (window.innerWidth >= 1200) {
+  console.log(screen.width);
+  if (screen.width > 1300) {
     url =
       "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=15";
   } else {
