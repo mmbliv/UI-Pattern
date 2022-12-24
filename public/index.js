@@ -34,7 +34,7 @@ dogCards.addEventListener("click", function (e) {
 // add click event to close btn
 cardDetail.addEventListener("click", function (e) {
     const target = e.target;
-    if (target.className === "close-container") {
+    if (target.className === "close") {
         cardDetail.style.opacity = "0";
         cardDetail.style.visibility = "hidden";
         // cardDetail.style.animationName = "disappear";

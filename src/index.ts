@@ -50,7 +50,7 @@ dogCards.addEventListener("click", function (e) {
 
 cardDetail.addEventListener("click", function (e) {
   const target = e.target as Element;
-  if (target.className === "close-container") {
+  if (target.className === "close") {
     cardDetail.style.opacity = "0";
     cardDetail.style.visibility = "hidden";
     // cardDetail.style.animationName = "disappear";

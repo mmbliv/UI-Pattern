@@ -64,12 +64,10 @@ export const buildDetailsCard = function (dog: DogDetailType) {
     <p class="card-details__weight"><span class='title'>Weight:</span>Imperia: ${dog.weight.imperial}; Metric: ${dog.weight.metric}</p>
     <p class="card-details__life-span"><span class='title'>Life Span:</span> ${dog.life_span}</p>
   </div>
-  <div class="close-container">
-  <div class="leftright"></div>
-  <div class="rightleft"></div>
-  <label class="close">close</label>
-</div>
-  </div>
+  <h2 class="close">
+  X
+  
+  </h2>
 `;
   return html;
 };
