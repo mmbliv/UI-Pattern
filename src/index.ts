@@ -98,7 +98,9 @@ cardDetailContainer.addEventListener("mouseover", function (e) {
 // scoll event
 document.addEventListener("scroll", function (e) {
   if (window.innerWidth <= 900) {
-    cardDetailContainer.style.display = "none";
+    cardDetailContainer.style.visibility = "hidden";
+    cardDetailContainer.style.opacity = "0";
+    layer.style.display = "none";
   }
 });
 // more button

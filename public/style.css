@@ -124,7 +124,7 @@ body {
 .layer {
   background-color: rgba(219, 229, 229, 0.857);
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   top: 5rem;
   display: none;
@@ -274,18 +274,7 @@ body {
   position: relative;
   top: 30%;
 }
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
+
 @media (max-width: 1300px) {
   .cards {
     grid-template-rows: repeat(2, 1fr);
@@ -300,8 +289,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
   .card-details {
-    height: 50vh;
-    width: 80%;
+    /* height: 50vh;
+    width: 80%; */
   }
   .loading {
     background-image: none;
@@ -319,12 +308,16 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
   .card-details {
-    width: 95%;
-    height: 40%;
+    /* width: 95%;
+    height: 40%; */
   }
   .card-details__content {
     gap: 5px;
     font-size: small;
+  }
+  .card-details__container {
+    width: 90%;
+    height: 60%;
   }
   .close {
     padding: 2px;
