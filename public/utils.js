@@ -96,6 +96,7 @@ export const buildDetailsCard = function (dog) {
     <p class="card-details__life-span"><span class='title'>Life Span:</span> ${dog.life_span}</p>
     <h2 class="close">X</h2>
   </div>
+  </div>
  `;
   return html;
 };

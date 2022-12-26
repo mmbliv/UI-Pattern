@@ -1,7 +1,9 @@
 import { fetchApi } from "./utils.js";
 import { buildDetailsCard } from "./utils.js";
-const cardDetailsMouseout = document.querySelector(".card-details");
-const cardDetail = document.querySelector(".card-details__container");
+const cardDetailContainersMouseout = document.querySelector(".card-details");
+const cardDetailContainer = document.querySelector(".card-details__container");
+const layer = document.querySelector(".layer");
+// const layer = document.querySelector(".layer")! as HTMLDivElement;
 let dogData = [];
 let url;
 // fetch data
@@ -20,49 +22,62 @@ const dogCards = document.querySelector(".cards");
 dogCards.addEventListener("click", function (e) {
     const target = e.target;
     const dogCard = target.closest(".dog-card");
-    cardDetail.classList.add("layer");
-    cardDetail.style.display = "flex";
-    cardDetail.style.opacity = "1";
+    // cardDetailContainer.classList.add("layer");
+    // layer.style.display = "inline";
+    cardDetailContainer.style.display = "flex";
+    // cardDetailContainer.style.opacity = "1";
     // dogCard.style.display = "flex";
-    cardDetail.style.visibility = "visible";
+    // cardDetailContainer.style.visibility = "visible";
     if (dogCard) {
         const id = dogCard.getAttribute("data-id");
         const dogWithDetail = dogData.filter((data) => data.id === id);
-        cardDetail.innerHTML = buildDetailsCard(dogWithDetail[0]);
+        cardDetailContainer.innerHTML = buildDetailsCard(dogWithDetail[0]);
+        const cardDetials = cardDetailContainer.children[0];
+        cardDetials.style.display = "flex";
     }
+    // const layer = cardDetailContainer.children[1]! as HTMLDivElement;
+    // console.log(layer);
+    // layer.style.display = "inline";
+    layer.style.display = "inline";
 });
 // add click event to close btn
-cardDetail.addEventListener("click", function (e) {
+cardDetailContainer.addEventListener("click", function (e) {
     const target = e.target;
     if (target.className === "close") {
-        cardDetail.style.opacity = "0";
-        cardDetail.style.visibility = "hidden";
-        // cardDetail.style.animationName = "disappear";
-        // cardDetail.style.display = "none";
+        // cardDetailContainer.style.opacity = "0";
+        // cardDetailContainer.style.visibility = "hidden";
+        // cardDetailContainer.style.animationName = "disappear";
+        cardDetailContainer.style.display = "none";
+        // const layer = cardDetailContainer.children[1]! as HTMLDivElement;
+        layer.style.display = "none";
+        // layer.style.display = "none";
         const detailCard = document.querySelector(".card-details");
         // detailCard.style.animationName = "disappear";
-        detailCard.style.opacity = "0";
-        detailCard.style.visibility = "hidden";
+        // detailCard.style.opacity = "0";
+        // detailCard.style.visibility = "hidden";
+        // detailCard.style.display = "none";
     }
 });
 // mouseover event
-cardDetail.addEventListener("mouseover", function (e) {
+cardDetailContainer.addEventListener("mouseover", function (e) {
     const target = e.target;
     const detailCard = target.closest(".card-details");
     if (detailCard) {
         detailCard.addEventListener("mouseleave", function (e) {
             const target = e.currentTarget;
-            target.style.opacity = "0";
-            target.style.visibility = "hidden";
-            cardDetail.style.opacity = "0";
-            cardDetail.style.visibility = "hidden";
+            // target.style.opacity = "0";
+            // target.style.visibility = "hidden";
+            // cardDetailContainer.style.opacity = "0";
+            // cardDetailContainer.style.visibility = "hidden";
+            cardDetailContainer.style.display = "none";
+            layer.style.display = "none";
         });
     }
 });
 // scoll event
 document.addEventListener("scroll", function (e) {
     if (window.innerWidth <= 900) {
-        cardDetail.style.display = "none";
+        cardDetailContainer.style.display = "none";
     }
 });
 // more button
