@@ -24,8 +24,9 @@ dogCards.addEventListener("click", function (e) {
     const dogCard = target.closest(".dog-card");
     // cardDetailContainer.classList.add("layer");
     // layer.style.display = "inline";
-    cardDetailContainer.style.display = "flex";
-    // cardDetailContainer.style.opacity = "1";
+    // cardDetailContainer.style.display = "flex";
+    cardDetailContainer.style.visibility = "visible";
+    cardDetailContainer.style.opacity = "1";
     // dogCard.style.display = "flex";
     // cardDetailContainer.style.visibility = "visible";
     if (dogCard) {
@@ -44,10 +45,10 @@ dogCards.addEventListener("click", function (e) {
 cardDetailContainer.addEventListener("click", function (e) {
     const target = e.target;
     if (target.className === "close") {
-        // cardDetailContainer.style.opacity = "0";
+        cardDetailContainer.style.opacity = "0";
         // cardDetailContainer.style.visibility = "hidden";
         // cardDetailContainer.style.animationName = "disappear";
-        cardDetailContainer.style.display = "none";
+        cardDetailContainer.style.visibility = "hidden";
         // const layer = cardDetailContainer.children[1]! as HTMLDivElement;
         layer.style.display = "none";
         // layer.style.display = "none";
@@ -69,7 +70,9 @@ cardDetailContainer.addEventListener("mouseover", function (e) {
             // target.style.visibility = "hidden";
             // cardDetailContainer.style.opacity = "0";
             // cardDetailContainer.style.visibility = "hidden";
-            cardDetailContainer.style.display = "none";
+            cardDetailContainer.style.visibility = "hidden";
+            // cardDetailContainer.style.display = "none";
+            cardDetailContainer.style.opacity = "0";
             layer.style.display = "none";
         });
     }
