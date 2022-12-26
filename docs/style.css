@@ -67,6 +67,7 @@ body {
   gap: 2rem;
   padding-left: 5rem;
   padding-right: 5rem;
+  width: 100%;
   /* z-index: 0; */
 }
 .dog-card__img {
@@ -302,6 +303,9 @@ body {
     font-size: smaller;
     padding: 1rem;
   }
+  .dog-card__img {
+    height: 250px;
+  }
 }
 @media (max-width: 600px) {
   .cards {
@@ -324,4 +328,7 @@ body {
     font-size: small;
     border-radius: 5px;
   }
+  /* .dog-card__img {
+    height: 200px;
+  } */
 }
