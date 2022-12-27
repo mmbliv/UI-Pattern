@@ -54,18 +54,9 @@ cardDetailContainer.addEventListener("click", function (e) {
 });
 // mouseover event
 cardDetailContainer.addEventListener("mouseleave", function (e) {
-  // const target = e.target as HTMLDivElement;
   cardDetailContainer.style.visibility = "hidden";
   cardDetailContainer.style.opacity = "0";
   layer.style.display = "none";
-  // const detailCard = target.closest(".card-details") as HTMLDivElement;
-  // if (detailCard) {
-  //   detailCard.addEventListener("mouseleave", function (e) {
-  //     cardDetailContainer.style.visibility = "hidden";
-  //     cardDetailContainer.style.opacity = "0";
-  //     layer.style.display = "none";
-  //   });
-  // }
 });
 // scoll event
 document.addEventListener("scroll", function (e) {
