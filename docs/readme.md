@@ -1,6 +1,6 @@
 # About
 
-- On this website, you can view a random selection of dog images and click on them to see more information about the breed.
+- This website is written using TypeScript, CSS, and HTML. It allows you to view a random selection of dog images and click on them to see more information about the breed.
 - [Website Link](https://mmbliv.github.io/UI-Pattern/)
 - [Source code](https://github.com/mmbliv/UI-Pattern)
 
