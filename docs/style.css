@@ -171,12 +171,12 @@ body {
   top: 30%;
 }
 
-@media (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   .cards {
     grid-template-rows: repeat(2, 1fr);
   }
 }
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .main-container {
     /* height: auto; */
     padding-top: 2rem;
@@ -199,7 +199,7 @@ body {
     height: 250px;
   }
 }
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .cards {
     grid-template-columns: repeat(1, 1fr);
   }
